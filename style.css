@@ -1,0 +1,57 @@
+
+@font-face {
+  font-family: 'MaPoliceRetro';
+  src: url('fonts/Modern_Prestige.otf') format('opentype');
+}
+
+body {
+  background: #f8f4ec;
+  font-family: 'MaPoliceRetro', 'Special Elite', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#flipbook {
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+#flipbook .page {
+  background: #fffef9;
+  border: 1px solid #333;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#flipbook .page img {
+  max-height: 400px;
+  max-width: 100%;
+  object-fit: contain;
+  border: 1px solid #444;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  color: #222;
+  text-align: center;
+}
+
+.hard {
+  background: #222;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'MaPoliceRetro', 'Special Elite', monospace;
+}
