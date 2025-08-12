@@ -1,229 +1,207 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Carnet 1942</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Carnet 1942</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script src="https://rawgit.com/blasten/turn.js/master/turn.js"></script>
+  <script src="https://rawgit.com/blasten/turn.js/master/turn.js"></script>
 </head>
 <body>
 
-  <!-- 🎬 INTRO ANIMÉE -->
-  <div id="intro">
-    <p id="typewriter"></p>
-  </div>
+    <div id="intro">
+    <p id="typewriter"></p>
+    <p id="instruction" style="color:#666; font-size:25px; margin-top:20px; opacity:0; transition:opacity 1s;">Cliquez pour demarrer...</p>
+  </div>
 
-  <!-- 🎵 AUDIO DE FOND -->
-  <audio id="background-audio" loop>
-    <source src="audio/ambiance.mp3" type="audio/mpeg">
-  </audio>
-  <button id="mute-btn">🔊</button>
+    <audio id="background-audio" loop>
+    <source src="audio/ambiance.mp3" type="audio/mpeg">
+  </audio>
+  <button id="mute-btn">🔊</button>
 
-  <div id="flipbook">
-    <div class="hard cover">Carnet 1942</div>
-    <div class="hard"></div>
+  <div id="flipbook">
+    <div class="hard cover">Carnet 1942</div>
+    <div class="hard"></div>
+    <div class="page">
+      <img src="images/dessin1.png" alt="Dessin 1">
+      <p class="description">🏴‍☠️ hey there ! ⚓️ I am Chiara, I just started this drawing account and for this first post I wanted to share this design.</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin2.png" alt="Dessin 2">
+      <p class="description">✍️ From random shapes, to random characters 🎨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin3.png" alt="Dessin 3">
+      <p class="description">🌸 Unique Faces 🌸</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin4.png" alt="Dessin 4">
+      <p class="description">☀️ what a nice surprise ☀️🌺🐤</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin5.png" alt="Dessin 5">
+      <p class="description">🏴‍☠️⚓️ And of course I made ✨the lady✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin6.png" alt="Dessin 6">
+      <p class="description">📞 back in 50s ☎️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin7.png" alt="Dessin 7">
+      <p class="description">⚔️The cursed armor ⚔️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin8.png" alt="Dessin 8">
+      <p class="description">Inspiration from the movie “This gun for hire” 1942</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin9.png" alt="Dessin 9">
+      <p class="description">✨✨✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin10.png" alt="Dessin 10">
+      <p class="description">Mushroom girl 1🍄</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin11.png" alt="Dessin 11">
+      <p class="description">Mushroom girl 2 🍄🩸</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin12.png" alt="Dessin 12">
+      <p class="description">✨🧡Diva🧡✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin13.png" alt="Dessin 13">
+      <p class="description">✨Sweet Marilyn ✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin14.png" alt="Dessin 14">
+      <p class="description">💚70s💚</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin15.png" alt="Dessin 15">
+      <p class="description">💚70s💚</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin16.png" alt="Dessin 216">
+      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin17.png" alt="Dessin 17">
+      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin18.png" alt="Dessin 18">
+      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin19.png" alt="Dessin 19">
+      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin20.png" alt="Dessin 20">
+      <p class="description">✨The Devil wears Prada ✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin21.png" alt="Dessin 21">
+      <p class="description">Legend of Alux 🌽🌙</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin22.png" alt="Dessin 22">
+      <p class="description">Legend of Alux 🌽🌙</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin23.png" alt="Dessin 23">
+      <p class="description">💙Blue Lagoon 💙
+        Since I’m a barmaid I had to do this ✨</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin24.png" alt="Dessin 24">
+      <p class="description">🌼 Margarita 🌼</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin25.png" alt="Dessin 25">
+      <p class="description">🌴Pina Colada 🥥🍒</p>
+    </div>
+    <div class="page">
+      <img src="images/dessin26.png" alt="Dessin 26">
+      <p class="description"> 💙 Me 💙 </p>
+    </div>
+    <div class="hard"></div>
+    <div class="hard cover">Fin</div>
+  </div>
 
-    <div class="page">
-      <img src="images/dessin1.png" alt="Dessin 1">
-      <p class="description">🏴‍☠️ hey there ! ⚓️ I am Chiara, I just started this drawing account and for this first post I wanted to share this design.</p>
-    </div>
+    <script>
+    // :clapper: Machine à écrire
+    const text = "Voici le carnet de Chiara...";
+    let i = 0;
 
-    <div class="page">
-      <img src="images/dessin2.png" alt="Dessin 2">
-      <p class="description">✍️ From random shapes, to random characters 🎨</p>
-    </div>
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 70);
+      } else {
+        setTimeout(() => {
+          document.getElementById("intro").style.display = "none";
+          document.getElementById("flipbook").style.display = "block";
+        }, 1000);
+      }
+    }
 
-    <div class="page">
-      <img src="images/dessin3.png" alt="Dessin 3">
-      <p class="description">🌸 Unique Faces 🌸</p>
-    </div>
+    function preloadImages() {
+      const images = document.querySelectorAll('#flipbook img');
+      images.forEach(img => {
+        const image = new Image();
+        image.src = img.src;
+      });
+    }
 
-    <div class="page">
-      <img src="images/dessin4.png" alt="Dessin 4">
-      <p class="description">☀️ what a nice surprise ☀️🌺🐤</p>
-    </div>
+    // :joystick: Initialisation du flipbook et gestion audio
+    $(document).ready(function () {
+      // Affiche l'instruction de clic après un court délai
+      setTimeout(() => {
+        document.getElementById("instruction").style.opacity = 1;
+      }, 1000);
 
-    <div class="page">
-      <img src="images/dessin5.png" alt="Dessin 5">
-      <p class="description">🏴‍☠️⚓️ And of course I made ✨the lady✨</p>
-    </div>
+      // Lance l'animation et l'audio au clic
+      $('#intro').on('click', function() {
+        if (i === 0) { // Ne lance l'animation qu'une seule fois
+          document.getElementById("instruction").style.opacity = 0;
+          typeWriter();
+          document.getElementById('background-audio').play();
+        }
+      });
 
-    <div class="page">
-      <img src="images/dessin6.png" alt="Dessin 6">
-      <p class="description">📞 back in 50s ☎️</p>
-    </div>
+      $('#flipbook').turn({
+        width: 800,
+        height: 500,
+        autoCenter: true,
+        gradients: true,
+        elevation: 50
+      });
 
-    <div class="page">
-      <img src="images/dessin7.png" alt="Dessin 7">
-      <p class="description">⚔️The cursed armor ⚔️</p>
-    </div>
+      $('#mute-btn').on('click', function () {
+        const audio = document.getElementById('background-audio');
+        audio.muted = !audio.muted;
+        this.textContent = audio.muted ? '🔇' : '🔊';
+      });
+    });
 
-    <div class="page">
-      <img src="images/dessin8.png" alt="Dessin 8">
-      <p class="description">Inspiration from the movie “This gun for hire” 1942</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin9.png" alt="Dessin 9">
-      <p class="description">✨✨✨</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin10.png" alt="Dessin 10">
-      <p class="description">Mushroom girl 1🍄</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin11.png" alt="Dessin 11">
-      <p class="description">Mushroom girl 2 🍄🩸</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin12.png" alt="Dessin 12">
-      <p class="description">✨🧡Diva🧡✨</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin13.png" alt="Dessin 13">
-      <p class="description">✨Sweet Marilyn ✨</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin14.png" alt="Dessin 14">
-      <p class="description">💚70s💚</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin15.png" alt="Dessin 15">
-      <p class="description">💚70s💚</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin16.png" alt="Dessin 216">
-      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin17.png" alt="Dessin 17">
-      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin18.png" alt="Dessin 18">
-      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin19.png" alt="Dessin 19">
-      <p class="description">USS Callister S4 Ep1 from Tales of BLACK MIRRORS 🚀🛰️</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin20.png" alt="Dessin 20">
-      <p class="description">✨The Devil wears Prada ✨</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin21.png" alt="Dessin 21">
-      <p class="description">Legend of Alux 🌽🌙</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin22.png" alt="Dessin 22">
-      <p class="description">Legend of Alux 🌽🌙</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin23.png" alt="Dessin 23">
-      <p class="description">💙Blue Lagoon 💙
-        Since I’m a barmaid I had to do this ✨</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin24.png" alt="Dessin 24">
-      <p class="description">🌼 Margarita 🌼</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin25.png" alt="Dessin 25">
-      <p class="description">🌴Pina Colada 🥥🍒</p>
-    </div>
-
-    <div class="page">
-      <img src="images/dessin26.png" alt="Dessin 26">
-      <p class="description"> 💙 Me 💙 </p>
-    </div>
-
-    <div class="hard"></div>
-    <div class="hard cover">Fin</div>
-  </div>
-
-  <!-- :scroll: SCRIPTS -->
-  <script>
-    // :clapper: Machine à écrire
-    const text = "Voici le carnet de Chiara...";
-    let i = 0;
-
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 70);
-      } else {
-        setTimeout(() => {
-          document.getElementById("intro").style.display = "none";
-          document.getElementById("flipbook").style.display = "block";
-
-          document.getElementById('background-audio').play(); 
-
-        }, 1000);
-      }
-    }
-
-    function preloadImages() {
-    // Sélectionne toutes les images dans le flipbook
-    const images = document.querySelectorAll('#flipbook img');
-    images.forEach(img => {
-        const image = new Image();
-        image.src = img.src; // Charge chaque image
-    });
-}
-
-
-    // :joystick: Initialisation du flipbook et gestion audio
-    $(document).ready(function () {
-      typeWriter();
-
-      $('#flipbook').turn({
-        width: 800,
-        height: 500,
-        autoCenter: true,
-        gradients: true,
-        elevation: 50
-      });
-
-      $('#mute-btn').on('click', function () {
-        const audio = document.getElementById('background-audio');
-        audio.muted = !audio.muted;
-        this.textContent = audio.muted ? '🔇' : '🔊';
-      });
-    });
-
-    // Ajout de la gestion des flèches du clavier
-    $(document).keydown(function(e){
-        var flipbook = $('#flipbook');
-        if (e.keyCode === 37) { // Flèche gauche
-            flipbook.turn('previous');
-        } else if (e.keyCode === 39) { // Flèche droite
-            flipbook.turn('next');
-        }
-    });
-    preloadImages();
-  </script>
+    // Ajout de la gestion des flèches du clavier
+    $(document).keydown(function(e){
+        var flipbook = $('#flipbook');
+        if (e.keyCode === 37) { // Flèche gauche
+            flipbook.turn('previous');
+        } else if (e.keyCode === 39) { // Flèche droite
+            flipbook.turn('next');
+        }
+    });
+    preloadImages();
+  </script>
 </body>
 </html>
