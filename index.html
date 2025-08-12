@@ -16,6 +16,7 @@
     <div id="intro-content">
       <p id="typewriter"></p>
       <p id="instruction" style="color:#666; font-size:25px; margin-top:20px; opacity:0; transition:opacity 1s;">Cliquez pour demarrer...</p>
+      <p id="keyboard-instruction" style="color:#666; font-size:25px; margin-top:10px; opacity:0; transition:opacity 1s;">Utilisez les ⬅️ et ➡️ du clavier pour tourner les pages.</p>
     </div>
   </div>
 
@@ -186,12 +187,14 @@
       // Affiche l'instruction de clic après un court délai
       setTimeout(() => {
         document.getElementById("instruction").style.opacity = 1;
+        document.getElementById("keyboard-instruction").style.opacity = 1; // Ajout pour l'instruction des flèches
       }, 1000);
 
       // Lance l'animation et l'audio au clic
       $('#intro').on('click', function() {
         if (i === 0) { // Ne lance l'animation qu'une seule fois
           document.getElementById("instruction").style.opacity = 0;
+          document.getElementById("keyboard-instruction").style.opacity = 0; // Ajout pour masquer l'instruction des flèches
           typeWriter();
           document.getElementById('background-audio').play();
         }
