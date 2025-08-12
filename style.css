@@ -1,13 +1,12 @@
+/* style.css */
 @font-face {
   font-family: 'MaPoliceRetro';
   src: url('fonts/Modern_Prestige.otf') format('opentype');
 }
 
 body {
-  /* Image de texture qui se répète pour couvrir tout le fond */
   background-image: url('images/bg.png');
   background-color: #f8f4ec; /* Couleur de secours */
-  /* Le reste de ton code CSS */
   font-family: 'MaPoliceRetro', 'Special Elite', monospace;
   display: flex;
   align-items: center;
@@ -31,6 +30,7 @@ body {
   color: #222;
   z-index: 1000;
   text-align: center;
+  transition: opacity 1s ease-in-out;
 }
 
 /* :mute: Bouton mute */
@@ -45,6 +45,24 @@ body {
   font-size: 20px;
   padding: 10px;
   cursor: pointer;
+}
+
+/* Nom de la musique */
+#song-title {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-in-out;
+  position: fixed;
+  top: 25px;
+  right: 80px; /* Ajuste la position par rapport au bouton de son */
+  z-index: 1001;
+  color: #444; /* Couleur du texte */
+  font-family: 'Special Elite', monospace;
+  font-size: 16px;
+  background-color: #fffef9;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #444;
 }
 
 /* :book: Flipbook */
@@ -89,4 +107,68 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'MaPoliceRetro', 'Special Elite', monospace;
+}
+
+/* STYLE CORRIGÉ POUR LA COUVERTURE DE FIN */
+.back-cover {
+  position: relative;
+  background: #222;
+  color: #fffef9;
+  text-align: center;
+}
+
+.synopsis-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 85%;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.synopsis-content h2 {
+  font-family: 'MaPoliceRetro', 'Special Elite', monospace;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  margin-top: 30px; /* Ajouté pour baisser le titre */
+  color: #fffef9;
+  text-align: center;
+}
+
+.synopsis-content p {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Nouvelle classe pour le texte du synopsis */
+.synopsis-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.6em; /* Augmente la taille pour une meilleure lisibilité */
+  line-height: 1.5; /* Espacement de ligne pour plus d'air */
+}
+
+.author-portrait {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fffef9;
+  margin-bottom: 15px;
+}
+
+.signature {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.2em;
+  margin-top: 20px;
+  font-style: italic;
+  color: #fffef9;
 }

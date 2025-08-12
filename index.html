@@ -8,23 +8,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <script src="https://rawgit.com/blasten/turn.js/master/turn.js"></script>
 </head>
 <body>
 
-    <div id="intro">
-    <p id="typewriter"></p>
-    <p id="instruction" style="color:#666; font-size:25px; margin-top:20px; opacity:0; transition:opacity 1s;">Cliquez pour demarrer...</p>
+  <div id="intro">
+    <div id="intro-content">
+      <p id="typewriter"></p>
+      <p id="instruction" style="color:#666; font-size:25px; margin-top:20px; opacity:0; transition:opacity 1s;">Cliquez pour demarrer...</p>
+    </div>
   </div>
 
-    <audio id="background-audio" loop>
+  <audio id="background-audio" loop>
     <source src="audio/ambiance.mp3" type="audio/mpeg">
   </audio>
   <button id="mute-btn">🔊</button>
+  <p id="song-title">Veronica Lake Sings Now You See It from " This Gun For Hire 1942 "</p>
 
   <div id="flipbook">
-    <div class="hard cover">Carnet 1942</div>
+    <div class="hard cover" style="font-size: 40px;">Carnet 1942</div>
     <div class="hard"></div>
     <div class="page">
       <img src="images/dessin1.png" alt="Dessin 1">
@@ -116,8 +118,7 @@
     </div>
     <div class="page">
       <img src="images/dessin23.png" alt="Dessin 23">
-      <p class="description">💙Blue Lagoon 💙
-        Since I’m a barmaid I had to do this ✨</p>
+      <p class="description">💙Blue Lagoon 💙 Since I’m a barmaid I had to do this ✨</p>
     </div>
     <div class="page">
       <img src="images/dessin24.png" alt="Dessin 24">
@@ -129,13 +130,20 @@
     </div>
     <div class="page">
       <img src="images/dessin26.png" alt="Dessin 26">
-      <p class="description"> 💙 Me 💙 </p>
+      <p class="description"> 💙 This is a gift for you 💙 </p>
     </div>
     <div class="hard"></div>
-    <div class="hard cover">Fin</div>
+    <div class="hard cover back-cover">
+      <div class="content-container">
+        <h2>À propos de l'auteure</h2>
+        <img src="images/dessin27.png" alt="Portrait de Chiara" class="author-portrait">
+        <p class="synopsis-text">Chiara, une jeune artiste passionnée et inspirée par l'histoire et le cinéma des années 40, partage à travers ce carnet ses dessins et ses influences. Ce carnet est une fenêtre sur son univers créatif, mêlant des personnages de fiction, des icônes de la pop culture et des hommages à ses films préférés.</p>
+        <p class="signature">Avec ❤️, Chiara</p>
+      </div>
+    </div>
   </div>
 
-    <script>
+  <script>
     // :clapper: Machine à écrire
     const text = "Voici le carnet de Chiara...";
     let i = 0;
@@ -146,10 +154,22 @@
         i++;
         setTimeout(typeWriter, 70);
       } else {
+        // Le texte est entièrement écrit.
+        // On fait disparaître l'intro en douceur.
         setTimeout(() => {
-          document.getElementById("intro").style.display = "none";
-          document.getElementById("flipbook").style.display = "block";
-        }, 1000);
+          document.getElementById("intro").style.opacity = 0; // Définit l'opacité à 0
+
+          // Attend la fin de la transition (1 seconde) avant de masquer l'élément.
+          setTimeout(() => {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("flipbook").style.display = "block";
+
+            // Affiche le titre de la musique en changeant son opacité
+            const songTitle = document.getElementById("song-title");
+            songTitle.style.opacity = "1";
+            songTitle.style.pointerEvents = "auto";
+          }, 1000); // Fait correspondre cette durée avec la transition CSS
+        }, 1000); // Attend 1 seconde après la fin de la saisie pour lancer la transition
       }
     }
 
@@ -194,12 +214,12 @@
 
     // Ajout de la gestion des flèches du clavier
     $(document).keydown(function(e){
-        var flipbook = $('#flipbook');
-        if (e.keyCode === 37) { // Flèche gauche
-            flipbook.turn('previous');
-        } else if (e.keyCode === 39) { // Flèche droite
-            flipbook.turn('next');
-        }
+      var flipbook = $('#flipbook');
+      if (e.keyCode === 37) { // Flèche gauche
+        flipbook.turn('previous');
+      } else if (e.keyCode === 39) { // Flèche droite
+        flipbook.turn('next');
+      }
     });
     preloadImages();
   </script>
