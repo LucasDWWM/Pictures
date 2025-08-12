@@ -13,6 +13,17 @@
 </head>
 <body>
 
+  <!-- 🎬 INTRO ANIMÉE -->
+  <div id="intro">
+    <p id="typewriter"></p>
+  </div>
+
+  <!-- 🎵 AUDIO DE FOND -->
+  <audio id="background-audio" loop>
+    <source src="audio/ambiance.mp3" type="audio/mpeg">
+  </audio>
+  <button id="mute-btn">🔊</button>
+
   <div id="flipbook">
     <div class="hard cover">Carnet 1942</div>
     <div class="hard"></div>
@@ -114,7 +125,7 @@
 
     <div class="page">
       <img src="images/dessin20.png" alt="Dessin 20">
-      <p class="description">✨The Devil wears Prada ✨/p>
+      <p class="description">✨The Devil wears Prada ✨</p>
     </div>
 
     <div class="page">
@@ -152,8 +163,42 @@
     <div class="hard cover">Fin</div>
   </div>
 
+  <!-- :scroll: SCRIPTS -->
   <script>
+    // :clapper: Machine à écrire
+    const text = "Voici le carnet de Chiara...";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 70);
+      } else {
+        setTimeout(() => {
+          document.getElementById("intro").style.display = "none";
+          document.getElementById("flipbook").style.display = "block";
+
+          document.getElementById('background-audio').play(); 
+
+        }, 1000);
+      }
+    }
+
+    function preloadImages() {
+    // Sélectionne toutes les images dans le flipbook
+    const images = document.querySelectorAll('#flipbook img');
+    images.forEach(img => {
+        const image = new Image();
+        image.src = img.src; // Charge chaque image
+    });
+}
+
+
+    // :joystick: Initialisation du flipbook et gestion audio
     $(document).ready(function () {
+      typeWriter();
+
       $('#flipbook').turn({
         width: 800,
         height: 500,
@@ -161,7 +206,24 @@
         gradients: true,
         elevation: 50
       });
+
+      $('#mute-btn').on('click', function () {
+        const audio = document.getElementById('background-audio');
+        audio.muted = !audio.muted;
+        this.textContent = audio.muted ? '🔇' : '🔊';
+      });
     });
+
+    // Ajout de la gestion des flèches du clavier
+    $(document).keydown(function(e){
+        var flipbook = $('#flipbook');
+        if (e.keyCode === 37) { // Flèche gauche
+            flipbook.turn('previous');
+        } else if (e.keyCode === 39) { // Flèche droite
+            flipbook.turn('next');
+        }
+    });
+    preloadImages();
   </script>
 </body>
 </html>
